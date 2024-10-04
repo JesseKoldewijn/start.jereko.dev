@@ -2,6 +2,7 @@ import {
   ErrorComponentProps,
   NotFoundRouteProps,
 } from "@tanstack/react-router";
+
 import INTERNAL_NotFound from "./_not-found";
 
 export const ErrorPage = (props: ErrorComponentProps) => {

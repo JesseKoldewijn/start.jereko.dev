@@ -1,38 +1,39 @@
 {
-	"name": "start.jereko.dev",
-	"description": "A showcase of the Tanstack Start Aplha",
-	"version": "1.0.0",
-	"author": "Jesse Koldewijn <dev@glitchtech.eu>",
-	"license": "MIT",
-	"private": true,
-	"sideEffects": false,
-	"type": "module",
-	"scripts": {
-		"dev": "vinxi dev",
-		"build": "vinxi build",
-		"start": "vinxi start",
-		"fmt": "prettier --write ."
-	},
-	"dependencies": {
-		"@tanstack/react-router": "^1.58.17",
-		"@tanstack/router-devtools": "^1.58.17",
-		"@tanstack/start": "^1.58.17",
-		"@vitejs/plugin-react": "^4.3.2",
-		"@tailwindcss/vite": "4.0.0-alpha.26",
-		"vite-tsconfig-paths": "^5.0.1",
-		"react": "^19.0.0-rc-459fd418-20241001",
-		"react-dom": "^19.0.0-rc-459fd418-20241001",
-		"vinxi": "^0.4.3"
-	},
-	"devDependencies": {
-		"@types/node": "^22.7.4",
-		"@types/react": "^18.3.11",
-		"@types/react-dom": "^18.3.0",
-		"prettier": "^3.3.3",
-		"prettier-plugin-tailwindcss": "^0.6.8",
-		"tailwindcss": "4.0.0-alpha.26",
-		"tailwind-merge": "^2.5.3",
-		"typescript": "^5.6.2"
-	},
-	"packageManager": "pnpm@9.12.0"
+  "name": "start.jereko.dev",
+  "description": "A showcase of the Tanstack Start Aplha",
+  "version": "1.0.0",
+  "author": "Jesse Koldewijn <dev@glitchtech.eu>",
+  "license": "MIT",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start",
+    "fmt": "prettier --write ."
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "4.0.0-alpha.26",
+    "@tanstack/react-router": "^1.58.17",
+    "@tanstack/router-devtools": "^1.58.17",
+    "@tanstack/start": "^1.58.17",
+    "@vitejs/plugin-react": "^4.3.2",
+    "react": "^19.0.0-rc-459fd418-20241001",
+    "react-dom": "^19.0.0-rc-459fd418-20241001",
+    "vinxi": "^0.4.3",
+    "vite-tsconfig-paths": "^5.0.1"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/node": "^22.7.4",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "tailwind-merge": "^2.5.3",
+    "tailwindcss": "4.0.0-alpha.26",
+    "typescript": "^5.6.2"
+  },
+  "packageManager": "pnpm@9.12.0"
 }

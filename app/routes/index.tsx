@@ -1,42 +1,43 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { createServerFn } from "@tanstack/start";
 import { AppBrandingConfig } from "config/branding";
 
-const getDate = createServerFn("GET", () => {
-	const dateTime = new Date().getTime();
-	const formatted = new Intl.DateTimeFormat("en-US", {
-		dateStyle: "full",
-		timeStyle: "long",
-		timeZone: "UTC",
-	}).format(dateTime);
+import { createFileRoute } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/start";
 
-	return {
-		date: formatted,
-	};
+const getDate = createServerFn("GET", () => {
+  const dateTime = new Date().getTime();
+  const formatted = new Intl.DateTimeFormat("en-US", {
+    dateStyle: "full",
+    timeStyle: "long",
+    timeZone: "UTC",
+  }).format(dateTime);
+
+  return {
+    date: formatted,
+  };
 });
 
 export const Route = createFileRoute("/")({
-	meta: (_) => [
-		{
-			name: "title",
-			content: AppBrandingConfig.getPageTitle("Home"),
-		},
-		{
-			name: "description",
-			content: AppBrandingConfig.getPageDescription("Home"),
-		},
-	],
-	component: Home,
-	loader: async () => await getDate(),
+  meta: (_) => [
+    {
+      name: "title",
+      content: AppBrandingConfig.getPageTitle("Home"),
+    },
+    {
+      name: "description",
+      content: AppBrandingConfig.getPageDescription("Home"),
+    },
+  ],
+  component: Home,
+  loader: async () => await getDate(),
 });
 
 function Home() {
-	const state = Route.useLoaderData();
+  const state = Route.useLoaderData();
 
-	return (
-		<div className="flex flex-row">
-			<h1 className="text-3xl font-bold underline">Hello world!</h1>
-			<p>{state.date}</p>
-		</div>
-	);
+  return (
+    <div className="flex flex-row">
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <p>{state.date}</p>
+    </div>
+  );
 }

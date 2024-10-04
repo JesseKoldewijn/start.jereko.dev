@@ -1,5 +1,6 @@
 /// <reference types="vinxi/types/client" />
 import { StartClient } from "@tanstack/start";
+
 import { createRouter } from "./router";
 
 const hydrateRootLazy = await import("react-dom/client").then(

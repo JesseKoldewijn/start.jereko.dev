@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@font-face {
+	font-family: "Geist";
+	display: swap;
+	font-display: swap;
+	font-style: normal;
+	font-weight: 0 999;
+	src:
+		url("/fonts/Geist/variable/Geist[wght].ttf") format("truetype"),
+		url("/fonts/Geist/ttf/Geist-Regular.ttf") format("truetype");
+}
+
+:root {
+	--font-family-sans: "Geist", "Inter", "Roboto", sans-serif;
+
+	--color-primary-background: #f3f3f3;
+	--color-secondary-background: #0d2818;
+	--color-contrast-background: #04471c;
+	--color-primary-foreground: #058c42;
+	--color-text-foreground: #101010;
+	--color-contrast-foreground: #16db65;
+
+	background-color: var(--color-primary-background);
+	color: var(--color-text-foreground);
+
+	font-family: var(--font-family-sans);
+
+	/* width */
+	::-webkit-scrollbar {
+		width: 10px;
+		height: 10px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		background: var(--color-secondary-background);
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: var(--color-primary-foreground);
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		background: var(--color-contrast-foreground);
+	}
+}
+
+.dark {
+	--color-primary-background: #020202;
+	--color-secondary-background: #0d2818;
+	--color-contrast-background: #04471c;
+	--color-primary-foreground: #058c42;
+	--color-text-foreground: #ffffff;
+	--color-contrast-foreground: #16db65;
+
+	background-color: var(--color-primary-background);
+	color: var(--color-text-foreground);
+}

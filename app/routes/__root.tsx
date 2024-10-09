@@ -1,3 +1,4 @@
+import { getWebRequest } from "vinxi/http";
 import RootComponent from "~/system/_component";
 import RootDocument from "~/system/_document";
 import { ErrorPage, NotFoundPage } from "~/system/_system-pages/error/hoc";
@@ -5,6 +6,21 @@ import { static_links } from "~/utils/seo_links";
 import { getPageMeta, seo } from "~/utils/seo_meta";
 
 import { createRootRoute } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/start";
+
+const getCookies = createServerFn("POST", async () => {
+  const request = getWebRequest();
+  const cookies = request.headers.get("Cookie");
+
+  const includesTheme = cookies?.includes("theme=");
+  const theme = includesTheme
+    ? cookies?.split("theme=")[1].split(";")[0] == "light"
+      ? "light"
+      : "dark"
+    : "dark";
+
+  return theme;
+});
 
 export const Route = createRootRoute({
   meta: (ctx) => {
@@ -33,13 +49,20 @@ export const Route = createRootRoute({
     ];
   },
   links: () => [...static_links],
-  component: RootComponent,
+  component: () => {
+    const theme = Route.useLoaderData();
+    return RootComponent({
+      theme,
+    });
+  },
   notFoundComponent: NotFoundPage,
   errorComponent: (props) => {
+    const theme = Route.useLoaderData();
     return (
-      <RootDocument>
+      <RootDocument theme={theme}>
         <ErrorPage {...props} />
       </RootDocument>
     );
   },
+  loader: async () => await getCookies(),
 });

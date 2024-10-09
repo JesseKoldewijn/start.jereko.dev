@@ -16,9 +16,9 @@ const TanStackRouterDevtools =
         })),
       );
 
-const RootComponent = () => {
+const RootComponent = (props: { theme: "dark" | "light" }) => {
   return (
-    <RootDocument>
+    <RootDocument {...props}>
       <Outlet />
       <Suspense>
         <TanStackRouterDevtools />

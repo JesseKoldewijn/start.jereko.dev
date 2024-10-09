@@ -51,9 +51,11 @@ const preloads: Links = [
     crossOrigin: "anonymous",
   },
   {
-    rel: "preload",
+    rel: "prefetch",
     href: appCss,
     as: "style",
+    type: "text/css",
+    crossOrigin: "anonymous",
   },
 ];
 

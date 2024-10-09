@@ -47,9 +47,10 @@ function Home() {
     setDateTime(formatted);
   };
 
-  const updateDateInterval = setInterval(updateDate, 1000);
 
   useLayoutEffect(() => {
+    const updateDateInterval = setInterval(updateDate, 1000);
+
     return () => clearInterval(updateDateInterval);
   }, []);
 

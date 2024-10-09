@@ -1,5 +1,5 @@
 {
-  "include": ["**/*.ts", "**/*.tsx", "prettier.config.js"],
+  "include": ["**/*.ts", "**/*.tsx", "*.config.*"],
   "compilerOptions": {
     "strict": true,
     "esModuleInterop": true,

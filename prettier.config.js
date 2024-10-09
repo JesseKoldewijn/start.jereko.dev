@@ -24,6 +24,7 @@ const config = {
   // Tailwind
   tailwindAttributes: ["className"],
   tailwindFunctions: ["clsx", "cn", "twMerge"],
+  tailwindConfig: "./tailwind.config.cjs",
 };
 
 export default config;

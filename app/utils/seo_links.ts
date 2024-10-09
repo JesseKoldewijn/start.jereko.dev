@@ -33,6 +33,7 @@ const pwa: Links = [
     href: "/favicon-16x16.png",
   },
   { rel: "manifest", href: "/site.webmanifest", color: "#fffff" },
+  { rel: "robots", href: "/robots.txt" },
 ];
 
 const preloads: Links = [
@@ -48,13 +49,6 @@ const preloads: Links = [
     href: "_build/fonts/Geist/ttf/Geist-Regular.ttf?url",
     as: "font",
     type: "font/ttf",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "prefetch",
-    href: appCss,
-    as: "style",
-    type: "text/css",
     crossOrigin: "anonymous",
   },
 ];

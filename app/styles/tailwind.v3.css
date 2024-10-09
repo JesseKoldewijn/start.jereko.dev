@@ -61,3 +61,14 @@
   background-color: var(--color-primary-background);
   color: var(--color-text-foreground);
 }
+
+html {
+  font-size: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}

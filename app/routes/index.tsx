@@ -1,5 +1,5 @@
 import { AppBrandingConfig } from "config/branding";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { createFileRoute } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/start";
@@ -38,6 +38,8 @@ function Home() {
   const [dateTime, setDateTime] = useState(date);
 
   const updateDate = () => {
+    console.log("Updating date");
+
     const dateTime = new Date().getTime();
     const formatted = new Intl.DateTimeFormat("en-US", {
       dateStyle: "full",
@@ -47,8 +49,7 @@ function Home() {
     setDateTime(formatted);
   };
 
-
-  useLayoutEffect(() => {
+  useEffect(() => {
     const updateDateInterval = setInterval(updateDate, 1000);
 
     return () => clearInterval(updateDateInterval);

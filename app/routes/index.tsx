@@ -35,30 +35,10 @@ export const Route = createFileRoute("/")({
 function Home() {
   const { date } = Route.useLoaderData();
 
-  const [dateTime, setDateTime] = useState(date);
-
-  const updateDate = () => {
-    console.log("Updating date");
-
-    const dateTime = new Date().getTime();
-    const formatted = new Intl.DateTimeFormat("en-US", {
-      dateStyle: "full",
-      timeStyle: "long",
-      timeZone: "UTC",
-    }).format(dateTime);
-    setDateTime(formatted);
-  };
-
-  useEffect(() => {
-    const updateDateInterval = setInterval(updateDate, 1000);
-
-    return () => clearInterval(updateDateInterval);
-  }, []);
-
   return (
     <div className="flex flex-col gap-2 p-6">
       <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <p>{dateTime}</p>
+      <p>{date}</p>
     </div>
   );
 }
